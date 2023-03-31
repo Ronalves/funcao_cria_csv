@@ -1,0 +1,10 @@
+CALL FUNCTION 'SAP_CONVERT_TO_CSV_FORMAT'
+      EXPORTING
+        i_field_seperator    = ';'
+      TABLES
+        i_tab_sap_data       = gt_saida
+      CHANGING
+        i_tab_converted_data = lt_arquivo
+      EXCEPTIONS
+        conversion_failed    = 1
+        OTHERS               = 2.
